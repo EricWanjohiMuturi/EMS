@@ -116,8 +116,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = ["static"]
+STATIC_URL = '/static/'  # Ensure this has a trailing slash
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # Use BASE_DIR for clarity and consistency
+]
+
+# Media files (user uploads)
+MEDIA_URL = '/media/'  # Set a unique path for media files
+MEDIA_ROOT = BASE_DIR / 'media'  # Directory for storing uploaded files
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
